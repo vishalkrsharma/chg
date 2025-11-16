@@ -1,11 +1,7 @@
-import { homedir } from 'os';
 import { readFileSync, writeFileSync, existsSync } from 'fs';
 import chalk from 'chalk';
 import { stringify, parse } from 'ini';
-
-const CHG_CONFIG = '.chgconfig';
-const HOME_DIR = homedir();
-const GLOBAL_CONFIG_PATH = `${HOME_DIR}/${CHG_CONFIG}`;
+import { CHG_CONFIG, GLOBAL_CONFIG_PATH } from '../utils/constants';
 
 export const setConfig = async ({ scopeKey, value, isGlobal }: { scopeKey: string; value: string; isGlobal: boolean }): Promise<void> => {
   console.log(isGlobal);
